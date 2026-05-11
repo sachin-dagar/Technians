@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import "./App.css";
-import logo from './data.png'; 
+import logo from './data.png';
 
 const App = () => {
   const [userInfo, setUserInfo] = useState({});
-  
+
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleTimeString();
 
 
-    // This function to get user IP  --->
+  // This function to get user IP  --->
   const getUserIP = async () => {
     // You can use an API to  get the user IP
     try {
@@ -73,21 +73,21 @@ const App = () => {
   return (
     <div className="app">
       <header className="header">
-      <img src={logo} alt="Tracking Logo" className="logo" />
-        <h1>Cookie Tracking App </h1>
+        <img src={logo} alt="Tracking Logo" className="logo" />
+        <h1>Cookie Tracking App in technians</h1>
       </header>
       <div className="content">
-      <h1> User Tracking with Cookies</h1>
-      <p>User IP: {userInfo.ip}</p>
-      <p>First Visit: {userInfo.firstVisit}</p>
-      <p>Last Interaction: {userInfo.lastInteraction || "No interaction "}</p>
-      <button onClick={userInteractionTracking}>Track Interaction</button>
-      <button onClick={sendUserDataToServer}>Send Data to Server</button>
-    </div>
-    <footer className="footer">
-        &copy; 2023 Cookie Track Company 
-      </footer>
+        <h1> User Tracking with Cookies</h1>
+        <p>User IP: {userInfo.ip}</p>
+        <p>First Visit: {userInfo.firstVisit}</p>
+        <p>Last Interaction: {userInfo.lastInteraction || "No interaction "}</p>
+        <button onClick={userInteractionTracking}>Track Interaction</button>
+        <button onClick={sendUserDataToServer}>Send Data to Server</button>
       </div>
+      <footer className="footer">
+        &copy; 2023 Cookie Track Company
+      </footer>
+    </div>
 
   );
 };
